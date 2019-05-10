@@ -1,5 +1,10 @@
-/*Hoja de estilos*/
-#contenedor {
+/** {
+    margin: 0;
+    padding: 0;
+}
+*/
+
+.container {
     width: 560px;
     margin: 0 auto;
     display: flex;
@@ -11,6 +16,7 @@
 .note {
     width: 60px;
     border-radius: 20px;
+    color: white;
     cursor: pointer;
 }
 
@@ -58,13 +64,16 @@
     margin: 20px auto;
     width: 560px;
     height: 50px;
-    background: #333;
+    background: black;
     cursor: pointer;
 }
 
-.white_bold {
-    font-family: Helvetica, Arial, Sans-Serif;
+.boton p {
     color: white;
+}
+
+.whiteBold {
+    font-family: Helvetica, Arial, Sans-Serif;
     font-weight: bold;
     font-size: 20px;
     user-select: none;

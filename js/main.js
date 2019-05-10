@@ -1,60 +1,65 @@
-/*Programacion de JavaScript*/
-var notes = [9, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
+window.onload = iniciar;
 
-var tempos = [4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
+function iniciar() {
 
-var notas = $('.sonidos');
+    var notes = [9, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
 
-$('.note').click(function () {
+    var tempos = [4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
 
-    let num = parseInt(this.id);
+    var notas = $('.sounds');
 
-    tocar(num);
+    $('.note').click(function () {
 
-});
+        let num = parseInt(this.id);
 
-function tocar(num) {
+        tocar(num);
 
-    notas[num].pause();
+    });
 
-    notas[num].currentTime = 0;
+    function tocar(num) {
 
-    notas[num].play();
+        notas[num].pause();
 
-    $("#" + num).css("box-shadow", "0px 0px 10px black");
+        notas[num].currentTime = 0;
 
-    setTimeout(function () {
+        notas[num].play();
 
-        $("#" + num).css("box-shadow", "none");
+        $("#" + num).css("box-shadow", "0px 0px 10px black");
 
-    }, 300);
+        setTimeout(function () {
 
-}
+            $("#" + num).css("box-shadow", "none");
 
-$('.boton').click(function () {
-
-    for (var x = 0, ln = notes.length; x < ln; x++) {
-    
-        setTimeout(function (y) {
-    
-            tocar(notes[y]);
-    
-        }, ritmo(x) * 350, x);
-    
-    }
-
-});
-
-function ritmo(num) {
-
-    suma = 0;
-
-    for (c = 0; c < num; c++) {
-
-        suma = suma + tempos[c];
+        }, 300);
 
     }
 
-    return suma;
+    $('.boton').click(function () {
+
+        for (var x = 0; x < notes.length; x++) {
+
+            setTimeout(function (y) {
+
+                tocar(notes[y]);
+
+            }, ritmo(x) * 350, x);
+
+        }
+
+    });
+
+    function ritmo(num) {
+
+        suma = 0;
+
+        for (c = 0; c < num; c++) {
+
+            suma = suma + tempos[c];
+
+        }
+
+        return suma;
+
+    }
 
 }
