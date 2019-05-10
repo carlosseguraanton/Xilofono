@@ -50,15 +50,15 @@ function iniciar() {
 
     function ritmo(numNota) {
 
-        suma = 0;
+        sumaRitmo = 0;
 
         for (index = 0; index < numNota; index++) {
 
-            suma = suma + temposNotas[index];
+            sumaRitmo = sumaRitmo + temposNotas[index];
 
         }
 
-        return suma;
+        return sumaRitmo;
 
     }
 
