@@ -2,33 +2,33 @@ window.onload = iniciar;
 
 function iniciar() {
 
-    var notes = [9, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
+    var arrayNotasCancion = [9, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
 
-    var tempos = [4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
+    var temposNotas = [4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
 
-    var notas = $('.sounds');
+    var arraySounds = $('.sounds');
 
     $('.note').click(function () {
 
-        let num = parseInt(this.id);
+        let numNota = parseInt(this.id);
 
-        tocar(num);
+        tocar(numNota);
 
     });
 
-    function tocar(num) {
+    function tocar(numNota) {
 
-        notas[num].pause();
+        arraySounds[numNota].pause();
 
-        notas[num].currentTime = 0;
+        arraySounds[numNota].currentTime = 0;
 
-        notas[num].play();
+        arraySounds[numNota].play();
 
-        $("#" + num).css("box-shadow", "0px 0px 10px black");
+        $("#" + numNota).css("box-shadow", "0px 0px 10px black");
 
         setTimeout(function () {
 
-            $("#" + num).css("box-shadow", "none");
+            $("#" + numNota).css("box-shadow", "none");
 
         }, 300);
 
@@ -36,25 +36,25 @@ function iniciar() {
 
     $('.boton').click(function () {
 
-        for (var x = 0; x < notes.length; x++) {
+        for (var index = 0; index < arrayNotasCancion.length; index++) {
 
             setTimeout(function (y) {
 
-                tocar(notes[y]);
+                tocar(arrayNotasCancion[y]);
 
-            }, ritmo(x) * 350, x);
+            }, ritmo(index) * 350, index);
 
         }
 
     });
 
-    function ritmo(num) {
+    function ritmo(numNota) {
 
         suma = 0;
 
-        for (c = 0; c < num; c++) {
+        for (index = 0; index < numNota; index++) {
 
-            suma = suma + tempos[c];
+            suma = suma + temposNotas[index];
 
         }
 
