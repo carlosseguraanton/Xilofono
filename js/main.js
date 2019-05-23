@@ -7,31 +7,31 @@ function iniciar() {
 
     var temposNotas = [4, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
 
-    var arraySounds = $('.sounds');
+    var arraySonidos = $('.sonido');
 
-    $('.note').click(function () {
+    $('.nota').click(function () {
 
-        let numNota = parseInt(this.id);
+        let numeroNota = parseInt(this.id);
 
-        tocar(numNota);
+        tocar(numeroNota);
 
     });
 
-    function tocar(numNota) {
+    function tocar(numeroNota) {
 
-        if (numNota < 9) {
+        if (numeroNota < 9) {
 
-            arraySounds[numNota].pause();
+            arraySonidos[numeroNota].pause();
 
-            arraySounds[numNota].currentTime = 0;
+            arraySonidos[numeroNota].currentTime = 0;
 
-            arraySounds[numNota].play();
+            arraySonidos[numeroNota].play();
 
-            $("#" + numNota).css("box-shadow", "0px 0px 10px black");
+            $("#" + numeroNota).css("box-shadow", "0px 0px 10px black");
 
             setTimeout(function () {
 
-                $("#" + numNota).css("box-shadow", "none");
+                $("#" + numeroNota).css("box-shadow", "none");
 
             }, 300);
 
@@ -53,11 +53,11 @@ function iniciar() {
 
     });
 
-    function ritmo(numNota) {
+    function ritmo(numeroNota) {
 
         sumaRitmo = 0;
 
-        for (index = 0; index < numNota; index++) {
+        for (index = 0; index < numeroNota; index++) {
 
             sumaRitmo = sumaRitmo + temposNotas[index];
 
