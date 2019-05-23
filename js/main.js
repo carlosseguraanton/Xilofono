@@ -2,11 +2,10 @@ window.onload = iniciar;
 
 function iniciar() {
 
-    // Le he quitado el primer valor que había aquí (que era 9 y sobrepasaba el tamaño del array de sonidos)
-    var arrayNotasCancion = [2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
+    // Estoy probando con el 9 para ver el error pero el valor correcto es 2
+    var arrayNotasCancion = [9, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
 
-    // Le he quitado el primer valor que había en este array (que era 4) para que así los tempos coincidan son las notas de arriba
-    var temposNotas = [1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
+    var temposNotas = [4, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
 
     var arraySounds = $('.sounds');
 
@@ -40,7 +39,7 @@ function iniciar() {
 
     }
 
-    $('.boton').click(function () {
+    $('button').click(function () {
 
         for (var index = 0; index < arrayNotasCancion.length; index++) {
 
