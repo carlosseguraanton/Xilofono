@@ -21,7 +21,7 @@
     
 }
 
-.nota {
+.barraMetal {
     
     width           : 60px;
     border-radius   : 20px;
@@ -30,56 +30,56 @@
     
 }
 
-.nota:nth-child(1) {
+.barraMetal:nth-child(1) {
     
     background  : #02B65E;
     height      : 300px;
     
 }
 
-.nota:nth-child(2) {
+.barraMetal:nth-child(2) {
     
     background  : #F0D20E;
     height      : 280px;
     
 }
 
-.nota:nth-child(3) {
+.barraMetal:nth-child(3) {
     
     background  : #D04559;
     height      : 260px;
     
 }
 
-.nota:nth-child(4) {
+.barraMetal:nth-child(4) {
 
     background  : #E28C12;
     height      : 240px;
     
 }
 
-.nota:nth-child(5) {
+.barraMetal:nth-child(5) {
     
     background  : #8E83C8;
     height      : 220px;
     
 }
 
-.nota:nth-child(6) {
+.barraMetal:nth-child(6) {
     
     background  : #0285D4;
     height      : 200px;
     
 }
 
-.nota:nth-child(7) {
+.barraMetal:nth-child(7) {
     
     background  : #FDC1C0;
     height      : 180px;
     
 }
 
-.nota:nth-child(8) {
+.barraMetal:nth-child(8) {
     
     background  : #BE3C22;
     height      : 160px;
