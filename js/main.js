@@ -6,7 +6,7 @@ function iniciar() {
 
     var duracionNotasCancion = [1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
 
-    var arraySonidosNotas = $('.sonidoNota');
+    var arraySonidos = $('.sonidoNota');
 
     $('.barraMetal').click(function () {
 
@@ -18,13 +18,11 @@ function iniciar() {
 
     function tocar(numeroNota) {
 
-        if (numeroNota < 9) {
+            arraySonidos[numeroNota].pause();
 
-            arraySonidosNotas[numeroNota].pause();
+            arraySonidos[numeroNota].currentTime = 0;
 
-            arraySonidosNotas[numeroNota].currentTime = 0;
-
-            arraySonidosNotas[numeroNota].play();
+            arraySonidos[numeroNota].play();
 
             $("#" + numeroNota).css("box-shadow", "0px 0px 10px black");
 
@@ -33,8 +31,6 @@ function iniciar() {
                 $("#" + numeroNota).css("box-shadow", "none");
 
             }, 300);
-
-        }
 
     }
 
