@@ -2,11 +2,11 @@ window.onload = iniciar;
 
 function iniciar() {
 
-    var numerosNotasCancion = [2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
+    let numerosNotasCancion = [2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 2, 1, 4, 2, 2, 2, 2, 2, 2, 2, 4, 0, 1, 2, 3, 3, 3, 3, 2, 2, 4, 4, 3, 1, 0];
 
-    var duracionNotasCancion = [1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
+    let duracionNotasCancion = [1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4];
 
-    var arraySonidos = $('.sonidoNota');
+    let arraySonidos = $('.sonidoNota');
 
     $('.barraMetal').click(function () {
 
@@ -36,29 +36,29 @@ function iniciar() {
 
     $('button').click(function () {
 
-        for (var index = 0; index < numerosNotasCancion.length; index++) {
+        for (let index = 0; index < numerosNotasCancion.length; index++) {
 
             setTimeout(function(y) {
 
                 tocar(numerosNotasCancion[y]);
 
-            }, ritmo(index) * 500, index);
+            }, procesarRitmo(index) * 500, index);
 
         }
 
     });
 
-    function ritmo(numeroNota) {
+    function procesarRitmo(numeroNota) {
 
-        sumaRitmo = 0;
+        ritmoProcesado = 0;
 
         for (index = 0; index < numeroNota; index++) {
 
-            sumaRitmo = sumaRitmo + duracionNotasCancion[index];
+            ritmoProcesado = ritmoProcesado + duracionNotasCancion[index];
 
         }
 
-        return sumaRitmo;
+        return ritmoProcesado;
 
     }
 
