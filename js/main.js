@@ -18,19 +18,19 @@ function iniciar() {
 
     function tocar(numeroNota) {
 
-            arraySonidos[numeroNota].pause();
+        arraySonidos[numeroNota].pause();
 
-            arraySonidos[numeroNota].currentTime = 0;
+        arraySonidos[numeroNota].currentTime = 0;
 
-            arraySonidos[numeroNota].play();
+        arraySonidos[numeroNota].play();
 
-            $("#" + numeroNota).css("box-shadow", "0px 0px 10px black");
+        $("#" + numeroNota).css("box-shadow", "0px 0px 10px black");
 
-            setTimeout(function () {
+        setTimeout(function () {
 
-                $("#" + numeroNota).css("box-shadow", "none");
+            $("#" + numeroNota).css("box-shadow", "none");
 
-            }, 300);
+        }, 300);
 
     }
 
@@ -38,27 +38,27 @@ function iniciar() {
 
         for (let index = 0; index < numerosNotasCancion.length; index++) {
 
-            setTimeout(function(y) {
+            setTimeout(function (y) {
 
                 tocar(numerosNotasCancion[y]);
 
-            }, procesarRitmo(index) * 500, index);
+            }, obtenerDuracionNota(index) * 500, index);
 
         }
 
     });
 
-    function procesarRitmo(numeroNota) {
+    function obtenerDuracionNota(numeroNota) {
 
-        ritmoProcesado = 0;
+        duracionNota = 0;
 
         for (index = 0; index < numeroNota; index++) {
 
-            ritmoProcesado = ritmoProcesado + duracionNotasCancion[index];
+            duracionNota = duracionNota + duracionNotasCancion[index];
 
         }
 
-        return ritmoProcesado;
+        return duracionNota;
 
     }
 
