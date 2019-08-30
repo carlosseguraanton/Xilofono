@@ -12,11 +12,11 @@ function iniciar() {
 
         let numeroNota = parseInt(this.id);
 
-        tocar(numeroNota);
+        tocarNota(numeroNota);
 
     });
 
-    function tocar(numeroNota) {
+    function tocarNota(numeroNota) {
 
         arraySonidos[numeroNota].pause();
 
@@ -40,7 +40,7 @@ function iniciar() {
 
             setTimeout(function (y) {
 
-                tocar(numerosNotasCancion[y]);
+                tocarNota(numerosNotasCancion[y]);
 
             }, obtenerDuracionNota(index) * 500, index);
 
